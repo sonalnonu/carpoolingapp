@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Product Name</th>
+		<th>Product Price</th>
+		<th>Product Quantity</th>
+		<th>Product Category</th><th></th>
+	</tr>
+	{% for x in var %}
+	<tr>
+		<td>{{x.name}}</td>
+		<td>{{x.price}}</td>
+		<td>{{x.quantity}}</td>
+		<td>{{x.category}}</td>
+		<td><a href="/editproduct/?id={{x.id}}">Edit</a><br><a href="/delete/?id={{x.id}}">Delete</a></td>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+</html>

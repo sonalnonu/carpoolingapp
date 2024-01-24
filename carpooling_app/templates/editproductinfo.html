@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="/editproduct/" method="post" style="max-width:500px;margin:auto">
+  {% csrf_token %}
+  {% for x in var %}
+  <h2>Edit Product Details</h2>
+  <input type="hidden" name="getid" value="{{getid}}">
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" value="{{x.name}}" name="name">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" value="{{x.price}}" name="price">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="text" value="{{x.quantity}}" name="quantity">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="text" value="{{x.category}}" name="category">
+  </div>
+
+{% endfor %}
+  <button type="submit" class="btn">Edit</button>
+
+</form>
+
+</body>
+</html>

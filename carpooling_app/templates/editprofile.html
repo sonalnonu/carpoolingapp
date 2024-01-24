@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="/editprofile/" method="post" style="max-width:500px;margin:auto">
+  {% csrf_token %}
+  {% for x in var %}
+  <h2>Edit Profile</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" value ="{{x.username}}" name="usrnm">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" value="{{x.email}}" name="email">
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" value="{{x.password}}" name="psw">
+  </div>
+
+  <button type="submit" class="btn">Update</button>
+  {% endfor %}
+</form>
+
+</body>
+</html>

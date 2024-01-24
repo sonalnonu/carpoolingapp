@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1 align="center">Users Information</h1>
+<table border="1" align="center" cellpadding="2" cellspacing="4">
+	<tr>
+		<th>Username</th>
+		<th>User Email</th>
+		<th>User Password</th>
+		<th>Status</th>
+		<th>Action</th>
+	
+	</tr>
+	{% for x in var %}
+	<tr>
+		<td>{{x.username}}</td>
+		<td>{{x.email}}</td>
+		<td>{{x.password}}</td>
+		<td>{{x.status}}</td>
+		<td><a href="/approve/?id={{x.id}}">Approve</a><br><a href="/reject/?id={{x.id}}">Reject</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<br><br>
+<h1 align="center">Approved List</h1>
+<table border="1" align="center" cellpadding="2" cellspacing="4">
+	<tr>
+		<th>Username</th>
+		<th>User Email</th>
+		<th>User Password</th>
+		<th>Status</th>
+		<th>Action</th>
+	
+	</tr>
+	{% for x in var2 %}
+	<tr>
+		<td>{{x.username}}</td>
+		<td>{{x.email}}</td>
+		<td>{{x.password}}</td>
+		<td>{{x.status}}</td>
+		<td><br><a href="/reject/?id={{x.id}}">Reject</a></td>
+	</tr>
+	{% endfor %}
+</table>
+<br><br>
+<h1 align="center">Reject List</h1>
+<table border="1" align="center" cellpadding="2" cellspacing="4">
+	<tr>
+		<th>Username</th>
+		<th>User Email</th>
+		<th>User Password</th>
+		<th>Status</th>
+		<th>Action</th>
+	
+	</tr>
+	{% for x in var3 %}
+	<tr>
+		<td>{{x.username}}</td>
+		<td>{{x.email}}</td>
+		<td>{{x.password}}</td>
+		<td>{{x.status}}</td>
+		<td><a href="/approve/?id={{x.id}}">Approve</a></td><br>
+	</tr>
+	{% endfor %}
+</table>
+</body>
+</html>

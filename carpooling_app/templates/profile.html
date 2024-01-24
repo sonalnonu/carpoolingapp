@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+	{% for x in var %}
+	
+		<tr><td>email:</td>
+		<td>{{x.email}}</td></tr>
+		<tr><td>Username:</td>
+		<td>{{x.username}}</td></tr>
+		<tr><td>Password:</td>
+		<td>{{x.password}}</td></tr>
+		{% endfor %}
+
+	
+</table>
+<a href="/editprofile/">Edit</a>
+
+</body>
+</html>
